@@ -20,7 +20,7 @@ return new class extends Migration
                 ->constrained('products')
                 ->onDelete('cascade'); // Delete auction details if product is deleted
             $table->timestamp('start_time'); // Auction start time
-            $table->timestamp('end_time'); // Auction end time
+            $table->timestamp('end_time')->nullable(); // Auction end time, allows NULL
             $table->decimal('current_price', 10, 2)->default(0); // Default starting price is 0
             $table->decimal('bid_increment', 10, 2); // Minimum bid increment
             $table->foreignId('winning_bid_id')

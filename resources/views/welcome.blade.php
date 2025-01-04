@@ -128,5 +128,8 @@
                 </div>
             </div>
         </div>
+        <div>
+            <h1> Bidding System </h1>
+        </div>
     </body>
 </html>
