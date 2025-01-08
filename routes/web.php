@@ -3,7 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
-Route::get('/student/(id)', [UserController::class, 'homepage']);
+
+use App\Http\Controllers\StudentController;
+
+// Routes for StudentController
+Route::get('/students', [StudentController::class, 'index'])->name('students.index'); // List all students
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create'); // Show form to create a new student
+Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.show'); // Show details of a specific student
+Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit'); // Show form to edit a student
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
